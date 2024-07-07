@@ -25,4 +25,4 @@ Dog.prototype.bark = function() {
 
 const dog1 = new Dog('Buddy', 'Golden Retriever');
 dog1.eat(); // Output: Buddy is eating.
-dog1.bark(); // Output: Buddy is barking.
+dog1.bark(); // Output: Buddy is barking.   
