@@ -2,7 +2,7 @@
     --primary-color: #215ada;
     --primary-color-hover: #1c4cb2;
     --background-gradient: linear-gradient(45deg, #2193b0, #6dd5ed); 
-    --container-bg-color: white;
+    --white-color: #ffffff;
     --container-padding: 20px 30px;
     --container-radius: 12px;
     --container-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -15,21 +15,32 @@
     --font-family: 'Arial', sans-serif;
     --font-size-base: 16px;
     --transition-speed: 0.3s ease;
+    --bg-gradient-1: linear-gradient(135deg, #215ada, #23a6d5);
 }
 
 
 body {
     font-family: var(--font-family);
-    background: var(--background-gradient);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
-.container {
-    background: var(--container-bg-color);
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    padding: 100px;
+    background: var(--background-gradient);
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+.todo-container {
+    background: var(--bg-gradient-1);
     padding: var(--container-padding);
     border-radius: var(--container-radius);
     box-shadow: var(--container-shadow);
@@ -39,7 +50,7 @@ body {
 h1 {
     margin: 0;
     text-align: center;
-    color: var(--text-color);
+    color: var(--white-color);
     font-size: 24px;
     display: flex;
     align-items: center;
@@ -49,7 +60,7 @@ h1 {
 
 h1 i {
     margin-right: 10px;
-    color: var(--primary-color);
+    color: var(--white-color);
 }
 
 .input-group {
@@ -73,7 +84,7 @@ h1 i {
     margin-left: 10px;
     padding: 10px 15px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -142,4 +153,103 @@ h1 i {
 
 .task-actions button:hover {
     color: var(--primary-color-hover);
+}
+
+/* Weather Section Styles */
+.weather-container {
+    margin-top: 30px;
+    background: var(--bg-gradient-1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    color: var(--white-color);
+}
+
+.weather-container h2 {
+    text-align: center;
+    color: var(--white-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.weather-input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    flex: 1;
+    max-width: 250px;
+    font-size: 16px;
+    outline: var(--white-color);
+}
+
+#search-weather-btn {
+    margin-left: 15px;
+    padding: 12px 20px;
+    background-color: var(--white-color);
+    color: #215ada;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#search-weather-btn:hover {
+    background-color: #215ada;
+    color: var(--white-color);
+}
+
+.weather-result {
+    text-align: center;
+    color: var(--white-color);
+    margin-top: 20px;
+}
+
+.weather-result h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.weather-result p {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.forecast-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 12px;
+    width: 18%;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.forecast-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.forecast-item h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.forecast-item p {
+    font-size: 16px;
+    margin: 5px 0;
 }
